@@ -90,45 +90,43 @@ def unique():
         return
     a= set()
     for i in students:
-        for j in student[3]:
-            unique_subjects.add(subject)
+        for j in i[3]:
+            a.add(j)
 
-    print("\n----- Unique Subjects -----")
-
-    for subject in unique_subjects:
-        print(subject)
+    for i in a:
+        print(i)
 
 
 def main():
     while True:
-        print("\n===== STUDENT RECORD MANAGEMENT SYSTEM =====")
-        print("1. Add Student")
-        print("2. View All Students")
-        print("3. Search Student")
-        print("4. Update Student")
+        print("student records choose option")
+        print("1. add Student")
+        print("2. view  Students")
+        print("3. search Student")
+        print("4. update Student")
         print("5. Delete Student")
-        print("6. Show Unique Subjects")
-        print("7. Exit")
+        print("6. See unique Subjects")
+        print("7. exit ")
 
-        choice = input("Enter your choice: ")
+        choice =input("Enter your choice: ")
 
-        if choice == "1":
-            add_student()
-        elif choice == "2":
-            view_students()
-        elif choice == "3":
-            search_student()
-        elif choice == "4":
-            update_student()
-        elif choice == "5":
-            delete_student()
+        if choice =="1":
+            plus()
+        elif choice =="2":
+            see()
+        elif choice =="3":
+            search()
+        elif choice =="4":
+            update()
+        elif choice =="5":
+            delete()
         elif choice == "6":
-            show_unique_subjects()
+            unique()
         elif choice == "7":
-            print("Thank you for using Student Record Management System!")
+            print("closing")
             break
         else:
-            print("Invalid choice. Please try again.")
+            print("Invalid choice try again")
 
 
 main()
