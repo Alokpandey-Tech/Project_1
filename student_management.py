@@ -14,7 +14,7 @@ def plus():
         if i != "":
             subj.append(i)
 
-    p = (roll_no, name, branch, subjects)
+    p = (rollno, name, branch, subjects)
     students.append(p)
 
     print("Student added ")
@@ -42,7 +42,7 @@ def search():
             print("Rollno ", i[0])
             print("name ", i[1])
             print("Branch:", it[2])
-            print("Subjects - "i[3])
+            print("Subjects - ",i[3])
             p= True
             break
 
