@@ -41,7 +41,7 @@ def search():
             print("Student Found")
             print("Rollno ", i[0])
             print("name ", i[1])
-            print("Branch:", it[2])
+            print("Branch:", i[2])
             print("Subjects - ",i[3])
             p= True
             break
