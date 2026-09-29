@@ -1,102 +1,96 @@
-# Student Record Management System
+#student record system
 
-students = []
+students=[]
 
-def add_student():
-    roll_no = input("Enter Roll No: ")
-    name = input("Enter Student Name: ")
-    branch = input("Enter Branch: ")
-    subjects_input = input("Enter subjects separated by commas: ")
+def plus():
+    rollno= input("enter rollno ; ")
+    name =input("enter name ; ")
+    branch =input("Enter Branch: ")
+    subjects=input("enter subject and seperate them with comma")
 
-    subjects = []
-    for subject in subjects_input.split(","):
-        subject = subject.strip()
-        if subject != "":
-            subjects.append(subject)
+    subj=[]
+    for i in subjects.split(","):
+        i = i.strip()
+        if i != "":
+            subj.append(i)
 
-    student = (roll_no, name, branch, subjects)
-    students.append(student)
+    p = (roll_no, name, branch, subjects)
+    students.append(p)
 
-    print("Student added successfully!")
+    print("Student added ")
 
 
-def view_students():
-    if len(students) == 0:
-        print("No student records found.")
+def see():
+    if len(students)== 0:
+        print("empty record")
         return
 
-    print("\n----- Student Records -----")
-
-    for student in students:
-        print("Roll No:", student[0])
-        print("Name:", student[1])
-        print("Branch:", student[2])
-        print("Subjects:", ", ".join(student[3]))
-        print("---------------------------")
+    for i in students:
+        print("Roll No:", i[0])
+        print("Name:", i[1])
+        print("Branch:",i[2])
+        print("Subjects: - ",i[3])
 
 
-def search_student():
-    roll_no = input("Enter Roll No to search: ")
-    found = False
+def search():
+    rn = input("enter rollno")
+    p= False
 
-    for student in students:
-        if student[0] == roll_no:
-            print("\nStudent Found")
-            print("Roll No:", student[0])
-            print("Name:", student[1])
-            print("Branch:", student[2])
-            print("Subjects:", ", ".join(student[3]))
-            found = True
+    for i in students:
+        if i[0] == rn:
+            print("Student Found")
+            print("Rollno ", i[0])
+            print("name ", i[1])
+            print("Branch:", it[2])
+            print("Subjects - "i[3])
+            p= True
             break
 
-    if found == False:
-        print("Student not found.")
+    if p== False:
+        print("missing student")
 
 
-def update_student():
-    roll_no = input("Enter Roll No to update: ")
+def update():
+    rollno = input("enter rollno ")
 
     for i in range(len(students)):
-        if students[i][0] == roll_no:
-            name = input("Enter New Name: ")
-            branch = input("Enter New Branch: ")
-            subjects_input = input("Enter new subjects separated by commas: ")
+        if students[i][0] ==rollno:
+            name = input("Enter new name")
+            branch = input("Enter branch ")
+            subjects= input("Enter subjects seperate by commas")
 
-            subjects = []
-            for subject in subjects_input.split(","):
-                subject = subject.strip()
-                if subject != "":
-                    subjects.append(subject)
+            subj= []
+            for j in subjects.split(","):
+                j=j.strip()
+                if j != "":
+                    subj.append(j)
 
-            students[i] = (roll_no, name, branch, subjects)
+            students[i] = (rollno, name, branch, subjects)
 
-            print("Student record updated successfully!")
+            print(" record updated ")
             return
+    print("not found")
 
-    print("Student not found.")
 
-
-def delete_student():
-    roll_no = input("Enter Roll No to delete: ")
+def delete():
+    rn= input("Enter rollno ")
 
     for i in range(len(students)):
-        if students[i][0] == roll_no:
+        if students[i][0] == rn:
             students.pop(i)
-            print("Student record deleted successfully!")
+            print("Student record deleted")
             return
 
-    print("Student not found.")
+    print("Student not found")
 
 
-def show_unique_subjects():
-    if len(students) == 0:
-        print("No student records found.")
+def unique():
+    if len(students) ==0:
+        print("No record")
         return
-
-    unique_subjects = set()
-
-    for student in students:
-        for subject in student[3]:
+    a= set()
+    for i in students:
+        for j in student[3]:
             unique_subjects.add(subject)
 
     print("\n----- Unique Subjects -----")
