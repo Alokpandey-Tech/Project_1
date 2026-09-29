@@ -1,3 +1,4 @@
+
 #student record system
 
 students=[]
@@ -14,7 +15,7 @@ def plus():
         if i != "":
             subj.append(i)
 
-    p = (rollno, name, branch, subjects)
+    p = (rollno, name, branch, subj)
     students.append(p)
 
     print("Student added ")
@@ -94,7 +95,8 @@ def unique():
             a.add(j)
 
     for i in a:
-        print(i)
+        print(i,end=", ")
+    print()
 
 
 def main():
